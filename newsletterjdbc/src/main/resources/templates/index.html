@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Newsletter</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Assine nossa Newsletter</h1>
+        <p>Receba as últimas atualizações diretamente na sua caixa de entrada.</p>
+        <form id="newsletterForm">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Assinar</button>
+        </form>
+        <p id="confirmationMessage"></p>
+    </div>
+<script>
+    document.getElementById("newsletterForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Obter o valor do e-mail
+    const emailInput = document.getElementById("email");
+    const email = emailInput.value;
+
+    // Validar e-mail
+    if (!validateEmail(email)) {
+        alert("Por favor, insira um endereço de e-mail válido.");
+        return;
+    }
+
+    // Enviar e-mail para o servidor (substitua pela sua lógica de backend)
+    // Neste exemplo, estamos apenas exibindo uma mensagem de confirmação
+    document.getElementById("confirmationMessage").innerText = `Obrigado por assinar! E-mail: ${email}`;
+    emailInput.value = ""; // Limpar o campo de e-mail
+});
+
+function validateEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+</script>
+</body>
+</html>
