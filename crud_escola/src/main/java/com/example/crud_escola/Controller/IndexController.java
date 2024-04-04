@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 // sinalizando o elemento que será usado 
 @Controller  
-
 public class IndexController { 
     // configuração de rota 
     // toda vez que tiver uma solicitação home voltara paga o index 

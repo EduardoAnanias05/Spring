@@ -24,16 +24,17 @@
                         </div>
                         <div class="card-body">
                             <!-- informar que o form tem o method post voce intrga com o controller -->
-                            <form method="post" action="cadastrar-adm">
+                            <form method="POST" action="cadastrar-adm">
                                 <div class="form-group">
                                     <!-- "name" tem que ter o mesmo nome que esta no POSTGRES -->
+                                    <input type="text" class="form-control" placeholder="cpf" name="cpf">
+                                   
+                                </div>
+                                <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Nome" name="nome">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Email" name="cpf">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Senha" name="email">
+                                    <input type="password" class="form-control" placeholder="Senha">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control" placeholder="Confirmar Senha"

@@ -34,7 +34,19 @@ public class AdministradorController {
             model.addAttribute("mensagem", mensagemErro); 
         }
 
-        return "login/login-adm";
+        return "/login/login-adm";
     }
-
 }
+// @PostMapping("cadastrar-adm")
+// public String cadastrarAdmBD(Admnistrador adm) {
+//     boolean verificaCpf = vcar.existsById(adm.getCpf());
+//     if (verificaCpf) {
+//         ar.save(adm);
+//         System.out.println("Cadastro Realizado com Sucesso");
+//     } else {
+//         System.out.println("Falha ao Cadastrar");
+
+//     }
+//     return "/login/login-adm";
+// }
+// }
