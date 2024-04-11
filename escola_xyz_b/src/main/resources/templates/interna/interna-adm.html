@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escola XYZ - Interna ADM</title>
-    <div th:include="~{fragmentos/head}"><!-- menu de estilização --></div>
+    <div th:insert="~{fragmentos/head}"><!-- menu de estilização --></div>
     <link rel="stylesheet" th:href="@{css/style-interna.css}">
 </head>
 
@@ -17,12 +17,30 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h3>Painel de Administrador</h3>
+                            <h3>Gerenciar professores</h3>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Você está logado como administrador</h5>
                             <p class="card-text">Aqui você pode gerenciar os professores cadastrados.</p>
-                            <a href="/professores" class="btn btn-info">Acessar Lista de Professores</a>
+                            <a href="/professores" class="btn btn-acesso">Acessar Lista de Professores</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="container">
+        <div class="card-logado">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Gerenciar Alunos</h3>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Você está logado como administrador</h5>
+                            <p class="card-text">Aqui você pode gerenciar os alunos cadastrados.</p>
+                            <a href="/alunos" class="btn btn-acesso">Acessar Lista de Alunos</a>
                         </div>
                     </div>
                 </div>

@@ -25,6 +25,16 @@ public class IndexController {
         return "cadastro/cadastro-adm";
     }
     
+
+    @GetMapping("/login-alu")
+    public String acessoPageLoginAlu() {
+        return "login/login-alu";
+    }
+
+    @GetMapping("/cadastro-alu")
+    public String acessoPageCadastroAlu() {
+        return "cadastro/cadastro-alu";
+    }
     
 
     
