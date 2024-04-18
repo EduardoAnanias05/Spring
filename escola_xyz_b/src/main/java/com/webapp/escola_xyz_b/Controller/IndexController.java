@@ -23,8 +23,14 @@ public class IndexController {
     @GetMapping("/cadastro-adm")
     public String acessoPageCadastroAdm() {
         return "cadastro/cadastro-adm";
+    } 
+
+    @GetMapping("/cadastro-prof")
+    public String acessoPageCadastroProf() {
+        return "cadastro/cadastro-prof";
     }
     
+
 
     @GetMapping("/login-alu")
     public String acessoPageLoginAlu() {

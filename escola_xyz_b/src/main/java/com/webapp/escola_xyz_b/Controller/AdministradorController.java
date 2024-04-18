@@ -47,11 +47,10 @@ public class AdministradorController {
     }
 
     @PostMapping("acesso-adm")
-    public String acessoAdm(@RequestParam String cpf,
-            @RequestParam String senha) {
+    public String acessoAdm(@RequestParam String cpf, @RequestParam String senha) {
+        boolean verificaCpf = ar.existsById(cpf);
+        boolean verificaSenha = ar.findByCpf(cpf).getSenha().equals(senha);
         try {
-            boolean verificaCpf = ar.existsById(cpf);
-            boolean verificaSenha = ar.findByCpf(cpf).getSenha().equals(senha);
             String url = "";
             if (verificaCpf && verificaSenha) {
                 acessoAdm = true;
@@ -65,5 +64,6 @@ public class AdministradorController {
         }
 
     }
+
 
 }

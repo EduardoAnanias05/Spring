@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola XYZ - Interna ADM</title>
+    <div th:insert="~{fragmentos/head}"><!-- menu de estilização --></div>
+    <link rel="stylesheet" th:href="@{css/style-interna.css}">
+</head>
+
+<body>
+    <div th:insert="~{fragmentos/header-adm :: header}"><!-- barra de menu --></div>
+    <div class="container">
+        <div class="card-logado">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Gerenciar Meus alunos</h3>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Você está logado como Professor</h5>
+                            <p class="card-text">Aqui você pode gerenciar os Alunos cadastrados nas suas disciplinas.</p>
+                            <a href="/professores" class="btn btn-acesso">Acessar Lista de Alunos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+  
+</body>
+
+</html>
