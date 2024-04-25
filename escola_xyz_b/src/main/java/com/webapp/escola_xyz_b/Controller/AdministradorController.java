@@ -1,11 +1,16 @@
 package com.webapp.escola_xyz_b.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.webapp.escola_xyz_b.Model.Administrador;
+import com.webapp.escola_xyz_b.Model.Professores;
 import com.webapp.escola_xyz_b.Repository.AdministradorRepository;
+import com.webapp.escola_xyz_b.Repository.ProfessoresRepository;
 import com.webapp.escola_xyz_b.Repository.VerificaCadastroAdmRepository;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AdministradorController {
+
+    @Autowired
+    ProfessoresRepository pf;
 
     @Autowired
     AdministradorRepository ar;
@@ -65,5 +73,21 @@ public class AdministradorController {
 
     }
 
+    @PostMapping("/cadastrar-prof")
+    public String cadastrarProfBD(Professores prof) {
+        Professores professorexiste = pf.findByCpf(prof.getCpf());
+        if (professorexiste != null) {
+            System.out.println("Falha ao Cadastrar");
+        } else {
+            pf.save(prof);
+            System.out.println("Cadastro Realizado com Sucesso");
+        }
+        return "/index";
+    } 
+
+    @GetMapping("/lista-prof")
+    public String acessoPagelistaProf() {
+        return "listas/lista-prof";
+    }
 
 }

@@ -25,6 +25,11 @@ public class IndexController {
         return "cadastro/cadastro-adm";
     } 
 
+    @GetMapping("/login-prof")
+    public String acessoPageLoginprof() {
+        return "login/login-prof";
+    }
+
     @GetMapping("/cadastro-prof")
     public String acessoPageCadastroProf() {
         return "cadastro/cadastro-prof";
