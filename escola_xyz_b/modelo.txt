@@ -1,0 +1,26 @@
+Gerenciamento de uma Escola
+ - Administrador - Global - 
+	- Cadastro de Alunos(Matricula)
+		- dados do aluno
+		- disciplinas 
+	- Cadastro do Docente(Atribuir Disciplinas)
+	
+	- filtros (Listar Alunos e Docentes)
+
+- Aluno - acesso interno(area do aluno)(user / pass)
+	- ver informações das suas disciplinas
+
+- Docente - ACESSO AREA INTERNA (user / pass)
+	  - LAnças notas para os alunos
+	  - listar alunos cadastrados em suas disciplinas
+  	
+como listei os profs e  alunos  
+
+
+
+1. Iterar sobre a Lista de Professores Matriculados: No corpo do meu HTML, eu uso Thymeleaf para iterar sobre a lista de professores matriculados e exibi-los na página. 
+Por exemplo, eu uso th:each para percorrer cada professor na lista e th:text para exibir o nome de cada um.
+
+2. Passar a Lista de Professores Matriculados para o Modelo Thymeleaf: No meu controlador Spring MVC, eu forneço a lista de professores matriculados para o modelo Thymeleaf. 
+Isso significa que, antes de renderizar a página HTML, eu obtenho a lista de professores matriculados do repositório e a adiciono como um atributo ao modelo Thymeleaf. 
+Assim, quando a página é carregada, os dados da lista estão disponíveis para serem exibidos.

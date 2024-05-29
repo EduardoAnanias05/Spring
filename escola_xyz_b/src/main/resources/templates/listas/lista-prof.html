@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola XYZ - Listagem Prof</title>
+    <div th:insert="~{fragmentos/head}"><!-- menu de estilização --></div>
+    <link rel="stylesheet" th:href="@{css/style-interna.css}">
+</head>
+
+<body>
+    <h1>Buscar</h1>
+    <span th:text="${msg}"></span>
+    <br>
+    <br>
+    <form method="post">
+        Buscar : <input type="text" name="buscar" id="buscar">
+        <button type="submit">Enviar</button>
+    </form>
+    <div th:if="${#objects.nullSafe(professores, default)}">
+        <table class="table table-hover table-responsive w-auto table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nome:</th>
+                    <th scope="col">E-mail:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="professores : ${professores}">
+                    <td><span th:text="${professores.nome}"></span></td>
+                    <td><span th:text="${professores.email}"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
